@@ -8,7 +8,7 @@ class ItemModel(db.Model):
     name = db.Column(db.String(80))
     price = db.Column(db.Float(precision=2))
 
-    def __init__(self, name, price):
+    def __init__(self, name: str, price: float) -> None:
         self.name = name
         self.price = price
 
@@ -16,7 +16,7 @@ class ItemModel(db.Model):
         return {'name': self.name, 'price': self.price}
 
     @classmethod
-    def find_by_name(cls, name):
+    def find_by_name(cls, name: str) -> object:
         return cls.query.filter_by(name=name).first()
 
     def save_to_db(self):
