@@ -5,7 +5,7 @@ from models.item import ItemModel
 
 class ItemTest(TestCase):
     def test_create_item(self):
-        item = ItemModel('test', 19.99)
+        item = ItemModel('test', 19.99, 1)
 
         self.assertEqual(item.name, 'test',
                          "The name of the item after creation does not equal \
@@ -13,9 +13,11 @@ class ItemTest(TestCase):
         self.assertEquals(item.price, 19.99,
                           "The price of the item after creation does not \
                             equal the constructor argumment.")
+        self.assertEqual(item.store_id, 1)
+        self.assertIsNone(item.store)
 
     def test_item_json(self):
-        item = ItemModel('test', 19.99)
+        item = ItemModel('test', 19.99, 1)
         expected = {
             'name': 'test',
             'price': 19.99
