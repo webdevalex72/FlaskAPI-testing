@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 flask = "*"
-flask-restful = "*"
 flask-sqlalchemy = "*"
 psycopg2-binary = "*"
 uwsgi = "*"
 flask-jwt = "*"
+flask-restful = "*"
 
 [dev-packages]
 autopep8 = "*"
