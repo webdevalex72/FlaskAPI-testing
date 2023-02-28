@@ -1,0 +1,7 @@
+flask *
+flask-sqlalchemy *
+uwsgi *
+flask-jwt *
+flask-restful *
+flake8 *
+pytest *
