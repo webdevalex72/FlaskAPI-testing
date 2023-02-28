@@ -15,4 +15,4 @@ flask-restful = "*"
 autopep8 = "*"
 
 [requires]
-python_version = "3.7.0"
+python_version = "3.9"

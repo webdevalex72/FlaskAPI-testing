@@ -48,9 +48,10 @@ class ItemTest(BaseTest):
                 self.assertDictEqual({'message': 'Item deleted'},
                                      json.loads(resp.data))
 
-         with self.app() as client:
+    def test_create_item(self):    
+        with self.app() as client:
             with self.app_context():
-                StoreModel('test').save_to_db()
+                StoreModel('test').save_to_db()                        
                 
                 resp = client.post('/item/test', data={'price': 17.99, 'store_id': 1})
 
