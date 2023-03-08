@@ -20,14 +20,19 @@ class BaseTest(TestCase):
         app.config['DEBUG'] = False
         with app.app_context():
             db.init_app(app)
-
+       
     def setUp(self):
+        # Runs before every test
+        # Make sure databse exists
+        # Get a test client
         with app.app_context():
             db.create_all()
-        self.app = app.test_client
+        self.app = app.test_client  # test_client - method from Flask
         self.app_context = app.app_context
 
     def tearDown(self):
+        # Runs after every test
+        # Database have to erased
         with app.app_context():
             db.session.remove()
             db.drop_all()

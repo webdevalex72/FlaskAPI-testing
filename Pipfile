@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 uwsgi = "*"
 flask-jwt = "*"
 flask-restful = "*"
+pytest = "*"
 
 [dev-packages]
 autopep8 = "*"
